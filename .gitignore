@@ -1,2 +1,4 @@
 .idea
 microservices/door/config.py
+web/node_modules
+web/yarn.lock
