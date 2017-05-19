@@ -1,7 +1,7 @@
 {
   "name": "cleverhome",
   "version": "1.0.0",
-  "description": "Clever Home WEB",
+  "description": "Clever Home WEBserv",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
