@@ -8,7 +8,7 @@ import time
 import telebot, config
 
 door_sensor = 12
-door_log = open(config..log_path + 'door.log', 'a',0)
+door_log = open(config.log_path + 'door.log', 'a',0)
 db_conect = mdb.connect(config.db_host, config.db_user, config.db_password , config.db_database);
 
 bot = telebot.TeleBot(config.telegram_token)
