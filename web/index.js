@@ -10,6 +10,7 @@ mysql.createConnection({
 
   var app = express();
   app.listen(3030);
+  app.locals.moment = require('moment');
   app.set('view engine', 'jade');
 
   app.get('/', (req, res, next)=>{
