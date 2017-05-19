@@ -1,0 +1,9 @@
+html
+  head
+    title= title
+  body
+    h1= message
+    each item of logs
+      .door
+        .time=item.created_at
+        .status=item.status

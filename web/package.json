@@ -1,0 +1,35 @@
+{
+  "name": "cleverhome",
+  "version": "1.0.0",
+  "description": "Clever Home WEB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruslanbanah/cleverHome.git"
+  },
+  "keywords": [
+    "clever",
+    "home",
+    "door",
+    "blinds",
+    "camera",
+    "raspbery",
+    "pi",
+    "banana"
+  ],
+  "author": "Banakh Ruslan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "mysql": "^2.13.0",
+    "promise-mysql": "^3.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ruslanbanah/cleverHome/issues"
+  },
+  "homepage": "https://github.com/ruslanbanah/cleverHome#readme"
+}
