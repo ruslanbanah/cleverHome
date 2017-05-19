@@ -15,7 +15,7 @@ mysql.createConnection({
 
   app.get('/', (req, res, next)=>{
     con.query('SELECT * FROM door').then((result)=>{
-     console.log("Result: ", result);
+     console.log("Result test: ", result);
      res.render('index', { title: 'Door logs', message:'Door logs', logs: result})
      next()
     }).catch(function(error){
