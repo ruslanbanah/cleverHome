@@ -13,6 +13,5 @@ html
         each item in logs
           tr
             td=item.id
-            td=item.time
+            td=moment(item.created_at).fromNow()
             td=item.status
-
