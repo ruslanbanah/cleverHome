@@ -1,20 +1,20 @@
 # cleverHome
 
-##micro services
+## Microservices
 >
->######Door
+>###### Door
 > - ````cp config_EXAMPLE.py config.py````
 > - ````./start.py&````
 >
 
 >
->######Blinds
+>###### Blinds
 > 
 > 
 >
 
 >
->######Camera motion
+>###### Camera motion
 > 
 > 
 >
