@@ -1,10 +1,10 @@
-log.path = ""
+log_path = ""
 
-db.host = ""
-db.user = ""
-db.password = ""
-db.database = ""
+db_host = ""
+db_user = ""
+db_password = ""
+db_database = ""
 
-telegram.root_chatid = "300810156"
-telegram.TOKEN = ""
-telegram.chatid = ""
+telegram_root_chatid = "300810156"
+telegram_TOKEN = ""
+telegram_chatid = ""

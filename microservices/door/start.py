@@ -8,10 +8,10 @@ import time
 import telebot, config
 
 door_sensor = 12
-door_log = open(config.LOG.path + 'door.log', 'a',0)
-db_conect = mdb.connect(config.DB.host, config.DB.user, config.DB.password , config.DB.database);
+door_log = open(config..log_path + 'door.log', 'a',0)
+db_conect = mdb.connect(config.db_host, config.db_user, config.db_password , config.db_database);
 
-bot = telebot.TeleBot(config.TELEGRAM.token)
+bot = telebot.TeleBot(config.telegram_token)
 @bot.message_handler(commands=['knock'])
 def echo_msg(message):
     bot.send_message(message.chat.id, "Who's there?")
@@ -19,22 +19,22 @@ def echo_msg(message):
 
 @bot.message_handler(commands=['start'])
 def handle_start_help(message):
-    config.TELEGRAM.chatid = message.chat.id
-    door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tBot: start chating, chat ID_" + str(config.TELEGRAM.chatid) + "\r\n")
-    bot.send_message(config.TELEGRAM.chatid, "Hi, i`m door-bot! Door sensor is activated.")
+    config.telegram_chatid = message.chat.id
+    door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tBot: start chating, chat ID_" + str(config.telegram_chatid) + "\r\n")
+    bot.send_message(config.telegram_chatid, "Hi, i`m door-bot! Door sensor is activated.")
 
 @bot.message_handler(commands=['stop'])
 def handle_start_help(message):
     config.CHATID = ""
-    door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tBot: stop chating, chat ID_" + str(config.TELEGRAM.chatid) + "\r\n")
-    bot.send_message(config.TELEGRAM.chatid, "Door sensor is deactivated.")
+    door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tBot: stop chating, chat ID_" + str(config.telegram_chatid) + "\r\n")
+    bot.send_message(config.telegram_chatid, "Door sensor is deactivated.")
 
 def write_door_state(e):
         if RPIO.input(door_sensor)==0:
                 door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tOpen\r\n")
-                bot.send_message(config.TELEGRAM.root_chatid, "door OPENED!")
-                if config.TELEGRAM.chatid:
-                        bot.send_message(config.TELEGRAM.chatid, "door OPENED!")
+                bot.send_message(config.telegram_root_chatid, "door OPENED!")
+                if config.telegram_chatid:
+                        bot.send_message(config.telegram_chatid, "door OPENED!")
                 with con:
                         cur = db_conect.cursor()
                         cur.execute("INSERT INTO door(status) VALUES('open')")
@@ -43,9 +43,9 @@ def write_door_state(e):
 
         else:
                 door_log.write (time.strftime("%d.%m.%Y %H:%M:%S")+"\tClose\r\n")
-                bot.send_message(config.TELEGRAM.root_chatid, "door CLOSED!")
-                if config.TELEGRAM.chatid:
-                        bot.send_message(config.TELEGRAM.chatid, "door CLOSED!")
+                bot.send_message(config.telegram_root_chatid, "door CLOSED!")
+                if config.telegram_chatid:
+                        bot.send_message(config.telegram_chatid, "door CLOSED!")
                 with con:
                         cur = db_conect.cursor()
                         cur.execute("INSERT INTO door(status) VALUES('close')")
