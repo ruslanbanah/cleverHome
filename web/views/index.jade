@@ -3,7 +3,16 @@ html
     title= title
   body
     h1= message
-    each item of logs
-      .door
-        .time=item.created_at
-        .status=item.status
+    table.door
+      thead
+        tr
+          th='ID'
+          th='Time'
+          th='Status'
+      tbody
+        each item in logs
+          tr
+            td=item.id
+            td=item.time
+            td=item.status
+
