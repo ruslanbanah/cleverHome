@@ -1,4 +1,6 @@
 .idea
 microservices/door/config.py
+microservices/door/config.pyc
 web/node_modules
 web/yarn.lock
+web/npm-debug.log
