@@ -14,8 +14,7 @@ mysql.createConnection({
   app.set('view engine', 'jade');
 
   app.get('/', (req, res, next)=>{
-    con.query('SELECT * FROM door LIMIT 20 ORDER BY created_at DESC').then((result)=>{
-     console.log("Result test: ", result);
+    con.query('SELECT * FROM door ORDER BY created_at DESC').then((result)=>{
      console.log("Result test: ", result);
      res.render('index', { title: 'Door logs', message:'Door logs', logs: result})
      next()
