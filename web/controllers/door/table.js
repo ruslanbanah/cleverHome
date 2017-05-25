@@ -5,7 +5,7 @@ module.exports = function(req, res) {
       .orderBy('created_at', 'desc')
       .then(result => {
         console.log("Result test: ", result);
-        res.render('door/index', {title: 'Door logs', message: 'Door logs', logs: result})
+        res.render('../../views/door/index', {title: 'Door logs', message: 'Door logs', logs: result})
         next()
       })
 }
