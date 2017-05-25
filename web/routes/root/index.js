@@ -6,6 +6,6 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get('/', require('../../controllers/roor'));
+router.get('/', require('../../controllers/root'));
 
 module.exports = router;
