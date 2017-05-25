@@ -35,7 +35,7 @@ def write_door_state(e):
                 bot.send_message(config.telegram_root_chatid, "door OPENED!")
                 if config.telegram_chatid:
                         bot.send_message(config.telegram_chatid, "door OPENED!")
-                with con:
+                with db_conect:
                         cur = db_conect.cursor()
                         cur.execute("INSERT INTO door(status) VALUES('open')")
                         db_conect.commit()
@@ -46,7 +46,7 @@ def write_door_state(e):
                 bot.send_message(config.telegram_root_chatid, "door CLOSED!")
                 if config.telegram_chatid:
                         bot.send_message(config.telegram_chatid, "door CLOSED!")
-                with con:
+                with db_conect:
                         cur = db_conect.cursor()
                         cur.execute("INSERT INTO door(status) VALUES('close')")
                         db_conect.commit()
