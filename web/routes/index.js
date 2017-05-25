@@ -1,4 +1,4 @@
 const door = require('./door');
-const roor = require('./home');
+const root = require('./root');
 
-module.exports = { door };
+module.exports = { door, root };
