@@ -2,7 +2,7 @@ const telegram = require('telegram-bot-api');
 const moment = require('moment')
 const fs = require('fs');
 
-const maxFiles = 2
+const maxFiles = 1
 const patch = '/tmp/sata/'
 const _path = patch + moment().format('YYYY-MM-DD') + '/'
 
