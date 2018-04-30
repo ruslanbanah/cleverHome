@@ -7,7 +7,7 @@ const patch = '/tmp/sata/'
 const _path = patch + moment().format('YYYY-MM-DD') + '/'
 const token = '251203343:AAEm-r5PujHF2sryLdEAcRnyBdvDoVAChDI';
 
- const bot = new TelegramBot(token, {polling: true});
+ const bot = new TelegramBot(token);
 
 
 fs.readdir(_path, (err, items)=>{
